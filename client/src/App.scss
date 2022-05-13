@@ -1,0 +1,109 @@
+.now-playing {
+  .music-title {
+    background-color: #e1e7ff;
+    margin-bottom: 15px;
+    width: 275px;
+  }
+
+  .music-artist {
+    background-color: #e7d8ff;
+  }
+
+  .animated {
+    position: relative;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #53218c;
+    max-width: 275px;
+    overflow: hidden;
+    line-height: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+
+  .animated > span {
+    padding: 0 0.5rem;
+  }
+
+  .animated__text {
+    position: absolute;
+    animation: 20s bounce linear infinite paused;
+    white-space: nowrap;
+    top: 0;
+  }
+
+  .animated:not(.animated--on-hover) .animated__text,
+  .animated.animated--on-hover:hover .animated__text {
+    animation-play-state: running;
+  }
+
+  @keyframes bounce {
+    0%, 5%, 95%, 100% {
+        left: 0%;
+        transform: translate(0, 0);
+    }
+    45%, 55% {
+        left: 100%;
+        transform: translate(-100%, 0);
+    }
+  }
+}
+
+.kirby-tarot {
+  text-align: center;
+  width: 300px;
+  padding: 50px;
+
+  .tarot-text {
+    margin-top: 310px;
+  }
+
+  .card {
+    perspective: 150rem;
+    position: relative;
+    margin: 0 50px;
+  }
+  
+  .card-side {
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 200px;
+    height: 280px;
+  }
+  
+  .card-side.front {
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    background-size: 200px 280px;
+  }
+  
+  .card-side.back {
+    background-color: #0093E9;
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(180deg);
+    animation-delay: 2s;
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(0deg);
+    animation-delay: 2s;
+  }
+
+  @keyframes bounce {
+    0%, 5%, 95%, 100% {
+        left: 0%;
+        transform: translate(0, 0);
+    }
+    45%, 55% {
+        left: 100%;
+        transform: translate(-100%, 0);
+    }
+  }
+}

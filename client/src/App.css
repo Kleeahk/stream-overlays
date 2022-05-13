@@ -1,0 +1,49 @@
+.music-title {
+  background-color: #e1e7ff;
+  margin-bottom: 15px;
+  width: 275px;
+}
+
+.music-artist {
+  background-color: #e7d8ff;
+}
+
+.animated {
+  position: relative;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #53218c;
+  max-width: 275px;
+  overflow: hidden;
+  line-height: 3rem;
+  height: 3rem;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.animated > span {
+  padding: 0 0.5rem;
+}
+
+.animated__text {
+  position: absolute;
+  animation: 20s bounce linear infinite paused;
+  white-space: nowrap;
+  top: 0;
+}
+
+.animated:not(.animated--on-hover) .animated__text,
+.animated.animated--on-hover:hover .animated__text {
+  animation-play-state: running;
+}
+
+@keyframes bounce {
+  0%, 5%, 95%, 100% {
+      left: 0%;
+      transform: translate(0, 0);
+  }
+  45%, 55% {
+      left: 100%;
+      transform: translate(-100%, 0);
+  }
+}
